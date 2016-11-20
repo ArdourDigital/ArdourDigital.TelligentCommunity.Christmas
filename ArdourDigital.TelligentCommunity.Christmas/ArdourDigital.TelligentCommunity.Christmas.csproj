@@ -41,9 +41,17 @@
     <Reference Include="Telligent.DynamicConfiguration">
       <HintPath>..\TelligentLibs\Telligent.DynamicConfiguration.dll</HintPath>
     </Reference>
+    <Reference Include="Telligent.Evolution.Api, Version=9.1.0.792, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TelligentLibs\Telligent.Evolution.Api.dll</HintPath>
+    </Reference>
     <Reference Include="Telligent.Evolution.Components, Version=9.1.0.792, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\TelligentLibs\Telligent.Evolution.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="Telligent.Evolution.Core, Version=9.1.0.792, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TelligentLibs\Telligent.Evolution.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

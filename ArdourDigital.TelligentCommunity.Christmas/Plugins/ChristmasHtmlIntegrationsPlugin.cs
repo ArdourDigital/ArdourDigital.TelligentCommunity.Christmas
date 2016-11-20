@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Telligent.Evolution.Extensibility.Api.Version1;
 using Telligent.Evolution.Extensibility.UI.Version1;
 using Telligent.Evolution.Extensibility.Version1;
 
@@ -47,6 +48,14 @@ namespace ArdourDigital.TelligentCommunity.Christmas.Plugins
         {
             if (target != RenderTarget.Page)
             {
+                return string.Empty;
+            }
+
+            var pageContext = PublicApi.Url.CurrentContext;
+
+            if (pageContext == null || pageContext.ThemeTypeId == null)
+            {
+                // We're on a non-themed page (such as the admin area) - don't run
                 return string.Empty;
             }
 
