@@ -72,26 +72,30 @@ namespace ArdourDigital.TelligentCommunity.Christmas.Plugins
             }
 
             // Add CSS to header
-            // Add Standard JS to end of page if possible
-            // Add init JS to end of page if possible (with config options - mobile yes/no etc.)
 
             var assetsHandler = PluginManager.Get<ChristmasAssetsHandlerPlugin>().FirstOrDefault();
 
-            return string.Format(@"<script type=""text/javascript"" src=""{0}""></script>
+            return string.Format(@"<link rel=""stylesheet"" href=""{0}"" media=""screen"" />
+<script type=""text/javascript"" src=""{1}""></script>
 <script type=""text/javascript"">
     jQuery(document).ready(function() 
         {{ 
             jQuery.ardour.extensions.plugins.christmas.register({{
-                snowEnabled: {1},
-                snowEnabledForMobile: {2},
-                snowColor: '{3}'
+                snowEnabled: {2},
+                snowEnabledForMobile: {3},
+                snowColor: '{4}',
+                snowmanEnabled: {5},
+                snowmanEnabledForMobile: {6}
             }}); 
         }});
 </script>",
+                assetsHandler.GetAssetUrl("style"),
                 assetsHandler.GetAssetUrl("script"),
                 JavascriptFriendlyBoolean(ChristmasConfiguration.SnowEnabled),
                 JavascriptFriendlyBoolean(ChristmasConfiguration.SnowEnabledForMobile),
-                ChristmasConfiguration.SnowColor);
+                ChristmasConfiguration.SnowColor,
+                JavascriptFriendlyBoolean(ChristmasConfiguration.SnowmanEnabled),
+                JavascriptFriendlyBoolean(ChristmasConfiguration.SnowmanEnabledForMobile));
         }
 
         private string JavascriptFriendlyBoolean(bool value)

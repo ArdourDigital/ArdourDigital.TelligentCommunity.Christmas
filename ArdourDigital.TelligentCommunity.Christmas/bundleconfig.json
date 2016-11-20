@@ -5,5 +5,11 @@
       "Assets/Scripts/jQuery.snow.min.js",
       "Assets/Scripts/ui.js"
     ]
+  },
+  {
+    "outputFileName": "Assets/Styles/snowman.min.css",
+    "inputFiles": [
+      "Assets/Styles/snowman.css"
+    ]
   }
 ]

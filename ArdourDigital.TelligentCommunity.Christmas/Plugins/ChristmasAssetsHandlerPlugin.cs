@@ -56,6 +56,9 @@ namespace ArdourDigital.TelligentCommunity.Christmas.Plugins
                 case "script":
                     ScriptResponse(httpContext);
                     return;
+                case "style":
+                    StyleResponse(httpContext);
+                    return;
             }
 
             NotFoundResponse(httpContext);
@@ -70,6 +73,12 @@ namespace ArdourDigital.TelligentCommunity.Christmas.Plugins
         {
             httpContext.Response.ContentType = "text/javascript";
             httpContext.Response.BinaryWrite(AssetManager.GetAsset("Scripts.bundle.min.js"));
+        }
+
+        private void StyleResponse(HttpContextBase httpContext)
+        {
+            httpContext.Response.ContentType = "text/css";
+            httpContext.Response.BinaryWrite(AssetManager.GetAsset("Styles.snowman.min.css"));
         }
 
         private void NotFoundResponse(HttpContextBase httpContext)

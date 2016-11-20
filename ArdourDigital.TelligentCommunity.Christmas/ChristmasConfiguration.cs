@@ -15,5 +15,9 @@ namespace ArdourDigital.TelligentCommunity.Christmas
         public static bool SnowEnabledForMobile { get; set; }
 
         public static string SnowColor { get; set; }
+
+        public static bool SnowmanEnabled { get; set; }
+
+        public static bool SnowmanEnabledForMobile { get; set; }
     }
 }

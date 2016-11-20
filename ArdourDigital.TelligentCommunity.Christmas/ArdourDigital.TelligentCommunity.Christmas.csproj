@@ -70,7 +70,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\snow-bg.png" />
+    <Content Include="Assets\Images\snowman.png" />
     <Content Include="Assets\Scripts\ui.js" />
+    <Content Include="Assets\Styles\snowman.css" />
+    <EmbeddedResource Include="Assets\Styles\snowman.min.css">
+      <DependentUpon>snowman.css</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Scripts\bundle.js" />

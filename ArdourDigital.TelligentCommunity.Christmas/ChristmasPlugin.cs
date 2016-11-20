@@ -59,7 +59,17 @@ namespace ArdourDigital.TelligentCommunity.Christmas
                 snowColor.DescriptionText = "The color of the snow flakes";
                 snowProperties.Properties.Add(snowColor);
 
-                return new[] { generalProperties, snowProperties };
+                var snowmanProperties = new PropertyGroup("snowman_configuration", "Snowman", 2);
+
+                var snowmanEnabled = new Property("snowman_enabled", "Enabled", PropertyType.Bool, 0, true.ToString());
+                snowmanEnabled.DescriptionText = "If ticked the snowman will be enabled";
+                snowmanProperties.Properties.Add(snowmanEnabled);
+
+                var snowmanEnabledForMobile = new Property("snowman_enabled_mobile", "Enabled for Mobile", PropertyType.Bool, 1, true.ToString());
+                snowmanEnabledForMobile.DescriptionText = "If ticked (and snowman is enabled), the snowman will be shown to single column layout users";
+                snowmanProperties.Properties.Add(snowmanEnabledForMobile);
+
+                return new[] { generalProperties, snowProperties, snowmanProperties };
             }
         }
 
@@ -93,6 +103,8 @@ namespace ArdourDigital.TelligentCommunity.Christmas
             ChristmasConfiguration.SnowEnabled = configuration.GetBool("snow_enabled");
             ChristmasConfiguration.SnowEnabledForMobile = configuration.GetBool("snow_enabled_mobile");
             ChristmasConfiguration.SnowColor = configuration.GetString("snow_color");
+            ChristmasConfiguration.SnowmanEnabled = configuration.GetBool("snowman_enabled");
+            ChristmasConfiguration.SnowmanEnabledForMobile = configuration.GetBool("snowman_enabled_mobile");
         }
     }
 }
