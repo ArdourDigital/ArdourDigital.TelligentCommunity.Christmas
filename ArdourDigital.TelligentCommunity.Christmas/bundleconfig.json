@@ -1,0 +1,9 @@
+[
+  {
+    "outputFileName": "Assets/Scripts/bundle.js",
+    "inputFiles": [
+      "Assets/Scripts/jQuery.snow.min.js",
+      "Assets/Scripts/ui.js"
+    ]
+  }
+]
