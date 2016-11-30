@@ -41,9 +41,13 @@ namespace ArdourDigital.TelligentCommunity.Christmas
                 endDate.DescriptionText = "The date the plugin will become inactive, decorations will be hidden after this date";
                 generalProperties.Properties.Add(endDate);
 
-                var enabled = new Property("enabled", "Enabled", PropertyType.Bool, 2, false.ToString());
+                var enabled = new Property("enabled", "Enabled for all users", PropertyType.Bool, 2, false.ToString());
                 enabled.DescriptionText = "If ticked decorations will appear for all users";
                 generalProperties.Properties.Add(enabled);
+
+                var queryStringKey = new Property("query_string_key", "Enable/Disable query string key", PropertyType.String, 3, string.Empty);
+                queryStringKey.DescriptionText = "Query string key to allow users to turn the decorations on or off. Users will be able to turn the decorations on by going to a link containing ?<em>&lt;query string key&gt;</em>=true, and turn off by going to a link containing ?<em>&lt;query string key&gt;</em>=false";
+                generalProperties.Properties.Add(queryStringKey);
 
                 var snowProperties = new PropertyGroup("snow_configuration", "Snow", 1);
 
@@ -79,6 +83,7 @@ namespace ArdourDigital.TelligentCommunity.Christmas
             {
                 yield return typeof(ChristmasHtmlIntegrationsPlugin);
                 yield return typeof(ChristmasAssetsHandlerPlugin);
+                yield return typeof(ChristmasQueryStringProcessor);
             }
         }
 
@@ -105,6 +110,7 @@ namespace ArdourDigital.TelligentCommunity.Christmas
             ChristmasConfiguration.SnowColor = configuration.GetString("snow_color");
             ChristmasConfiguration.SnowmanEnabled = configuration.GetBool("snowman_enabled");
             ChristmasConfiguration.SnowmanEnabledForMobile = configuration.GetBool("snowman_enabled_mobile");
+            ChristmasConfiguration.QueryStringKey = configuration.GetString("query_string_key");
         }
     }
 }

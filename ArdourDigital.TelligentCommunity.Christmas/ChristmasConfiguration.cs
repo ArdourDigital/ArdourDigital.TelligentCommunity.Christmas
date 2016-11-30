@@ -19,5 +19,23 @@ namespace ArdourDigital.TelligentCommunity.Christmas
         public static bool SnowmanEnabled { get; set; }
 
         public static bool SnowmanEnabledForMobile { get; set; }
+
+        public static string QueryStringKey { get; set; }
+
+        public static string CookieName
+        {
+            get
+            {
+                return "christmas_decorations";
+            }
+        }
+
+        public static bool WithinEnabledDates
+        {
+            get
+            {
+                return DateTime.UtcNow > StartDate && DateTime.UtcNow < EndDate;
+            }
+        }
     }
 }

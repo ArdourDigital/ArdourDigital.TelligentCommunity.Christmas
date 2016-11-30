@@ -45,8 +45,22 @@
         isMobile: function() {
             return $('.single-column').is(':visible');
         },
+        
+        isCookiePresent: function(cookieName) {
+            return this.getCookie(cookieName) == 'true';
+        },
+
+        getCookie: function(name) {
+            var value = "; " + document.cookie;
+            var parts = value.split("; " + name + "=");
+            if (parts.length == 2) return parts.pop().split(";").shift();
+        },
 
         register: function (options) {
+            if (options.requireCookie && !this.isCookiePresent(options.cookieName)) {
+                return;
+            }
+
             if (options.snowEnabled && (options.snowEnabledForMobile || !this.isMobile())) {
                 this.setupSnow(options.snowColor);
             }

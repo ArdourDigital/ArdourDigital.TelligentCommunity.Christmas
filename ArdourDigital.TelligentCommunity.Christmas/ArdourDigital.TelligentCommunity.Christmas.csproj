@@ -60,6 +60,7 @@
     <Compile Include="ChristmasPlugin.cs" />
     <Compile Include="Plugins\ChristmasAssetsHandlerPlugin.cs" />
     <Compile Include="Plugins\ChristmasHtmlIntegrationsPlugin.cs" />
+    <Compile Include="Plugins\ChristmasQueryStringProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

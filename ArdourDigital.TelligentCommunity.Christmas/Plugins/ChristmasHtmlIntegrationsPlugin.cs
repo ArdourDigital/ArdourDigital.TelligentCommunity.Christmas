@@ -39,6 +39,26 @@ namespace ArdourDigital.TelligentCommunity.Christmas.Plugins
                 return true;
             }
         }
+        
+        private bool IsPotentiallyEnabled
+        {
+            get
+            {
+                if (ChristmasConfiguration.EnabledForAll)
+                {
+                    return true;
+                }
+
+                if (!string.IsNullOrWhiteSpace(ChristmasConfiguration.QueryStringKey))
+                {
+                    return true;
+                }
+
+                // TODO Check if element added
+
+                return false;
+            }
+        }
 
         public void Initialize()
         {
@@ -59,20 +79,18 @@ namespace ArdourDigital.TelligentCommunity.Christmas.Plugins
                 return string.Empty;
             }
 
-            if (DateTime.UtcNow < ChristmasConfiguration.StartDate || DateTime.UtcNow > ChristmasConfiguration.EndDate)
+            if (!ChristmasConfiguration.WithinEnabledDates)
             {
                 return string.Empty;
             }
 
             // Check cookie enabled/diabled
-
-            if (!ChristmasConfiguration.EnabledForAll)
+            
+            if (!IsPotentiallyEnabled)
             {
                 return string.Empty;
             }
-
-            // Add CSS to header
-
+            
             var assetsHandler = PluginManager.Get<ChristmasAssetsHandlerPlugin>().FirstOrDefault();
 
             return string.Format(@"<link rel=""stylesheet"" href=""{0}"" media=""screen"" />
@@ -85,7 +103,9 @@ namespace ArdourDigital.TelligentCommunity.Christmas.Plugins
                 snowEnabledForMobile: {3},
                 snowColor: '{4}',
                 snowmanEnabled: {5},
-                snowmanEnabledForMobile: {6}
+                snowmanEnabledForMobile: {6},
+                cookieName: '{7}',
+                requireCookie: {8}
             }}); 
         }});
 </script>",
@@ -95,7 +115,9 @@ namespace ArdourDigital.TelligentCommunity.Christmas.Plugins
                 JavascriptFriendlyBoolean(ChristmasConfiguration.SnowEnabledForMobile),
                 ChristmasConfiguration.SnowColor,
                 JavascriptFriendlyBoolean(ChristmasConfiguration.SnowmanEnabled),
-                JavascriptFriendlyBoolean(ChristmasConfiguration.SnowmanEnabledForMobile));
+                JavascriptFriendlyBoolean(ChristmasConfiguration.SnowmanEnabledForMobile),
+                ChristmasConfiguration.CookieName,
+                JavascriptFriendlyBoolean(!ChristmasConfiguration.EnabledForAll));
         }
 
         private string JavascriptFriendlyBoolean(bool value)
