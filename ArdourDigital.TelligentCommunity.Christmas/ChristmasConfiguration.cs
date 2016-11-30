@@ -22,6 +22,12 @@ namespace ArdourDigital.TelligentCommunity.Christmas
 
         public static string QueryStringKey { get; set; }
 
+        public static string TextboxSelector { get; set; }
+
+        public static string TextboxEnableValue { get; set; }
+
+        public static string TextboxDisableValue { get; set; }
+
         public static string CookieName
         {
             get

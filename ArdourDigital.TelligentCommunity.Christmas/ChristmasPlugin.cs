@@ -49,6 +49,18 @@ namespace ArdourDigital.TelligentCommunity.Christmas
                 queryStringKey.DescriptionText = "Query string key to allow users to turn the decorations on or off. Users will be able to turn the decorations on by going to a link containing ?<em>&lt;query string key&gt;</em>=true, and turn off by going to a link containing ?<em>&lt;query string key&gt;</em>=false";
                 generalProperties.Properties.Add(queryStringKey);
 
+                var textBoxSelector = new Property("textbox_selector", "Textbox selector", PropertyType.String, 4, string.Empty);
+                textBoxSelector.DescriptionText = "JQuery selector of a textbox to monitor. If either of the values specified below are typed into this textbox the decorations will be enabled or disabled. To use the default theme search box enter <em>.site-banner .search .field-item-input input</em>";
+                generalProperties.Properties.Add(textBoxSelector);
+
+                var textBoxEnabledValue = new Property("textbox_enabled_value", "Textbox enabled value", PropertyType.String, 5, string.Empty);
+                textBoxEnabledValue.DescriptionText = "When this value is typed in the textbox specified above the decorations will be enabled";
+                generalProperties.Properties.Add(textBoxEnabledValue);
+
+                var textBoxDisabledValue = new Property("textbox_disabled_value", "Textbox disabled value", PropertyType.String, 6, string.Empty);
+                textBoxDisabledValue.DescriptionText = "When this value is typed in the textbox specified above the decorations will be disabled";
+                generalProperties.Properties.Add(textBoxDisabledValue);
+
                 var snowProperties = new PropertyGroup("snow_configuration", "Snow", 1);
 
                 var snowEnabled = new Property("snow_enabled", "Enabled", PropertyType.Bool, 0, true.ToString());
@@ -111,6 +123,9 @@ namespace ArdourDigital.TelligentCommunity.Christmas
             ChristmasConfiguration.SnowmanEnabled = configuration.GetBool("snowman_enabled");
             ChristmasConfiguration.SnowmanEnabledForMobile = configuration.GetBool("snowman_enabled_mobile");
             ChristmasConfiguration.QueryStringKey = configuration.GetString("query_string_key");
+            ChristmasConfiguration.TextboxSelector = configuration.GetString("textbox_selector");
+            ChristmasConfiguration.TextboxEnableValue = configuration.GetString("textbox_enabled_value");
+            ChristmasConfiguration.TextboxDisableValue = configuration.GetString("textbox_disabled_value");
         }
     }
 }

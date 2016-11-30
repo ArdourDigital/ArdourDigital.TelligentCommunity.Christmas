@@ -1,4 +1,5 @@
 ﻿using ArdourDigital.TelligentCommunity.Christmas.Assets;
+using System;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Web;
@@ -35,10 +36,6 @@ namespace ArdourDigital.TelligentCommunity.Christmas.Plugins
 
         public void ProcessRequest(HttpContextBase httpContext)
         {
-            // TO DO
-
-            // Ensure caching set appropriately
-
             if (!httpContext.Request.QueryString.AllKeys.Contains(_fileNameQueryString))
             {
                 NotFoundResponse(httpContext);
@@ -67,12 +64,16 @@ namespace ArdourDigital.TelligentCommunity.Christmas.Plugins
         private void ScriptResponse(HttpContextBase httpContext)
         {
             httpContext.Response.ContentType = "text/javascript";
+            httpContext.Response.Cache.SetCacheability(HttpCacheability.Public);
+            httpContext.Response.Cache.SetExpires(DateTime.UtcNow.AddDays(7));
             httpContext.Response.BinaryWrite(AssetManager.GetAsset("Scripts.bundle.min.js"));
         }
 
         private void StyleResponse(HttpContextBase httpContext)
         {
             httpContext.Response.ContentType = "text/css";
+            httpContext.Response.Cache.SetCacheability(HttpCacheability.Public);
+            httpContext.Response.Cache.SetExpires(DateTime.UtcNow.AddDays(7));
             httpContext.Response.BinaryWrite(AssetManager.GetAsset("Styles.snowman.min.css"));
         }
 

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Telligent.Evolution.Extensibility.Api.Version1;
 using Telligent.Evolution.Extensibility.UI.Version1;
 using Telligent.Evolution.Extensibility.Version1;
@@ -54,7 +53,12 @@ namespace ArdourDigital.TelligentCommunity.Christmas.Plugins
                     return true;
                 }
 
-                // TODO Check if element added
+                if (!string.IsNullOrWhiteSpace(ChristmasConfiguration.TextboxSelector)
+                    && !string.IsNullOrWhiteSpace(ChristmasConfiguration.TextboxEnableValue)
+                    && !string.IsNullOrWhiteSpace(ChristmasConfiguration.TextboxDisableValue))
+                {
+                    return true;
+                }
 
                 return false;
             }
@@ -83,8 +87,6 @@ namespace ArdourDigital.TelligentCommunity.Christmas.Plugins
             {
                 return string.Empty;
             }
-
-            // Check cookie enabled/diabled
             
             if (!IsPotentiallyEnabled)
             {
@@ -105,7 +107,11 @@ namespace ArdourDigital.TelligentCommunity.Christmas.Plugins
                 snowmanEnabled: {5},
                 snowmanEnabledForMobile: {6},
                 cookieName: '{7}',
-                requireCookie: {8}
+                requireCookie: {8},
+                textboxSelector: '{9}',
+                textboxEnabledValue: '{10}',
+                textboxDisabledValue: '{11}',
+                cookieExpiryTime: '{12}'
             }}); 
         }});
 </script>",
@@ -117,12 +123,21 @@ namespace ArdourDigital.TelligentCommunity.Christmas.Plugins
                 JavascriptFriendlyBoolean(ChristmasConfiguration.SnowmanEnabled),
                 JavascriptFriendlyBoolean(ChristmasConfiguration.SnowmanEnabledForMobile),
                 ChristmasConfiguration.CookieName,
-                JavascriptFriendlyBoolean(!ChristmasConfiguration.EnabledForAll));
+                JavascriptFriendlyBoolean(!ChristmasConfiguration.EnabledForAll),
+                ChristmasConfiguration.TextboxSelector,
+                JavascriptFriendlyString(ChristmasConfiguration.TextboxEnableValue),
+                JavascriptFriendlyString(ChristmasConfiguration.TextboxDisableValue),
+                ChristmasConfiguration.EndDate.ToString("ddd, dd MMM yyyy HH:mm:ss UTC"));
         }
 
         private string JavascriptFriendlyBoolean(bool value)
         {
             return value.ToString().ToLower();
+        }
+
+        private string JavascriptFriendlyString(string value)
+        {
+            return value.Replace("'", "\'");
         }
     }
 }
