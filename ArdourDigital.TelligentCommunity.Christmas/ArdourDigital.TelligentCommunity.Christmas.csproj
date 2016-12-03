@@ -32,18 +32,18 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugPre9|AnyCPU'">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugTelligent8|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\DebugPre9\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;Pre9</DefineConstants>
+    <OutputPath>bin\DebugTelligent8\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;TELLIGENT8</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleasePre9|AnyCPU'">
-    <OutputPath>bin\ReleasePre9\</OutputPath>
-    <DefineConstants>TRACE;PRE9</DefineConstants>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseTelligent8|AnyCPU' ">
+    <OutputPath>bin\ReleaseTelligent8\</OutputPath>
+    <DefineConstants>TRACE;TELLIGENT8</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>

@@ -6,7 +6,7 @@ using Telligent.Evolution.Extensibility.Version1;
 
 namespace ArdourDigital.TelligentCommunity.Christmas.Plugins
 {
-#if !Pre9
+#if !TELLIGENT8
     public class ChristmasQueryStringProcessor : IHttpRequestFilter, IPlugin
     {
         private const string _cookieName = "christmas_decorations";

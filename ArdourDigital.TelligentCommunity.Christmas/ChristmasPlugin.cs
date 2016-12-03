@@ -45,7 +45,7 @@ namespace ArdourDigital.TelligentCommunity.Christmas
                 enabled.DescriptionText = "If ticked decorations will appear for all users";
                 generalProperties.Properties.Add(enabled);
 
-#if !Pre9
+#if !TELLIGENT8
 
                 var queryStringKey = new Property("query_string_key", "Enable/Disable query string key", PropertyType.String, 3, string.Empty);
                 queryStringKey.DescriptionText = "Query string key to allow users to turn the decorations on or off. Users will be able to turn the decorations on by going to a link containing ?<em>&lt;query string key&gt;</em>=true, and turn off by going to a link containing ?<em>&lt;query string key&gt;</em>=false";
@@ -99,7 +99,7 @@ namespace ArdourDigital.TelligentCommunity.Christmas
             {
                 yield return typeof(ChristmasHtmlIntegrationsPlugin);
                 yield return typeof(ChristmasAssetsHandlerPlugin);
-#if !Pre9
+#if !TELLIGENT8
                 yield return typeof(ChristmasQueryStringProcessor);
 #endif
             }
