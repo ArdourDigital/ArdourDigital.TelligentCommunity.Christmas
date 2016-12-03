@@ -32,12 +32,12 @@ namespace ArdourDigital.TelligentCommunity.Christmas
             get
             {
                 var generalProperties = new PropertyGroup("general", "General", 0);
-                
-                var startDate = new Property("start_date", "Start Date", PropertyType.Date, 0, new DateTime(DateTime.UtcNow.Year, 12, 1, 0, 0, 0).ToString());
+
+                var startDate = new Property("start_date", "Start Date", PropertyType.Date, 0, DefaultStartDate.ToString());
                 startDate.DescriptionText = "The date the plugin will become active, no decorations will be shown before this date";
                 generalProperties.Properties.Add(startDate);
 
-                var endDate = new Property("end_date", "End Date", PropertyType.Date, 1, new DateTime(DateTime.UtcNow.Year, 12, 25, 0, 0, 0).AddDays(12).ToString());
+                var endDate = new Property("end_date", "End Date", PropertyType.Date, 1, DefaultEndDate.ToString());
                 endDate.DescriptionText = "The date the plugin will become inactive, decorations will be hidden after this date";
                 generalProperties.Properties.Add(endDate);
 
@@ -71,8 +71,8 @@ namespace ArdourDigital.TelligentCommunity.Christmas
                 snowEnabledForMobile.DescriptionText = "If ticked (and snow is enabled), the snow effect will be shown to single column layout users";
                 snowProperties.Properties.Add(snowEnabledForMobile);
 
-                var snowColor = new Property("snow_color", "Color", PropertyType.Color, 2, "#cccccc");
-                snowColor.DescriptionText = "The color of the snow flakes";
+                var snowColor = new Property("snow_color", "Color", PropertyType.String, 2, "#cccccc");
+                snowColor.DescriptionText = "The color of the snow flakes (as a hex code e.g. <em>#cccccc</em>)";
                 snowProperties.Properties.Add(snowColor);
 
                 var snowmanProperties = new PropertyGroup("snowman_configuration", "Snowman", 2);
@@ -114,8 +114,11 @@ namespace ArdourDigital.TelligentCommunity.Christmas
 
         public void Update(IPluginConfiguration configuration)
         {
-            ChristmasConfiguration.StartDate = configuration.GetDateTime("start_date");
-            ChristmasConfiguration.EndDate = configuration.GetDateTime("end_date");
+            var startDate = configuration.GetDateTime("start_date");
+            var endDate = configuration.GetDateTime("end_date");
+
+            ChristmasConfiguration.StartDate = startDate == default(DateTime) ? DefaultStartDate : startDate;
+            ChristmasConfiguration.EndDate = endDate == default(DateTime) ? DefaultEndDate : endDate;
             ChristmasConfiguration.EnabledForAll = configuration.GetBool("enabled");
             ChristmasConfiguration.SnowEnabled = configuration.GetBool("snow_enabled");
             ChristmasConfiguration.SnowEnabledForMobile = configuration.GetBool("snow_enabled_mobile");
@@ -126,6 +129,16 @@ namespace ArdourDigital.TelligentCommunity.Christmas
             ChristmasConfiguration.TextboxSelector = configuration.GetString("textbox_selector");
             ChristmasConfiguration.TextboxEnableValue = configuration.GetString("textbox_enabled_value");
             ChristmasConfiguration.TextboxDisableValue = configuration.GetString("textbox_disabled_value");
+        }
+
+        private DateTime DefaultStartDate
+        {
+            get { return new DateTime(DateTime.UtcNow.Year, 12, 1, 0, 0, 0); }
+        }
+
+        private DateTime DefaultEndDate
+        {
+            get { return new DateTime(DateTime.UtcNow.Year, 12, 25, 0, 0, 0).AddDays(12); }
         }
     }
 }
