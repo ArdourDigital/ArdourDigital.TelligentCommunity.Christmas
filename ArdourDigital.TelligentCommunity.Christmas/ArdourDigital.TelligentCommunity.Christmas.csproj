@@ -82,6 +82,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ArdourDigital.TelligentCommunity.Christmas.Telligent8.nuspec" />
     <None Include="ArdourDigital.TelligentCommunity.Christmas.nuspec" />
     <None Include="bundleconfig.json" />
     <None Include="bundleconfig.json.bindings">

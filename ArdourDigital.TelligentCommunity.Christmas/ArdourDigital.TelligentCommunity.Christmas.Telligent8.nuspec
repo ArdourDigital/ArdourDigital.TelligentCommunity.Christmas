@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  For more info on this file format visit http://docs.nuget.org/docs/reference/nuspec-reference.
+-->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">  
+  <metadata>
+    <id>ArdourDigital.TelligentCommunity.Christmas.Telligent8</id>
+    <version>$version$</version>
+    <authors>Ardour Digital Limited</authors>
+    <description>Christmas decorations for Telligent Community 8.x</description>
+    <language>en-US</language>
+    <licenseUrl>https://github.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas</projectUrl>
+    <copyright>2016 - Ardour Digital Limited</copyright>
+    <tags>Telligent, TelligentCommunity</tags>    
+  </metadata>
+  <files>
+    <file src="bin\ReleaseTelligent8\ArdourDigital.TelligentCommunity.Christmas.dll" target="lib" />
+  </files>
+</package>
