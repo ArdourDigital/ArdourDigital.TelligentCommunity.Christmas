@@ -9,8 +9,6 @@ namespace ArdourDigital.TelligentCommunity.Christmas.Plugins
 #if !TELLIGENT8
     public class ChristmasQueryStringProcessor : IHttpRequestFilter, IPlugin
     {
-        private const string _cookieName = "christmas_decorations";
-
         public string Name
         {
             get

@@ -8,9 +8,6 @@ namespace ArdourDigital.TelligentCommunity.Christmas
 {
     public class ChristmasPlugin : IPlugin, IConfigurablePlugin, IRequiredConfigurationPlugin, IPluginGroup
     {
-        // TODO - Allow cookie to be set via QS
-        // TODO - Allow cookie to be set via textbox
-
         public string Name
         {
             get
