@@ -4,5 +4,7 @@ In order to build the solution the following Telligent DLLs should be copied her
 
 For licensing reasons these should not be commited to the repository.
 
-- Telligent.Evolution.Components
 - Telligent.DynamicConfiguration
+- Telligent.Evolution.Api
+- Telligent.Evolution.Components
+- Telligent.Evolution.Core
