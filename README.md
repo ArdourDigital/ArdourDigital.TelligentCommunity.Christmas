@@ -6,7 +6,7 @@ Add a little christmas cheer to your Telligent Community with this plugin.
 
 The plugin allows you to add a snow effect and/or a snowman footer to your community. You can configure if this is shown for all users of your community, or allow them to opt in or out (as a sort of christmas easter egg!).
 
-![Example of the decorations](https://raw.githubusercontent.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas/master/Assets/example.PNG)
+![Example of the decorations](https://raw.githubusercontent.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas/master/Assets/example.png)
 
 ## Supported Versions
 This plugin should work with the following versions of Telligent Community
@@ -43,7 +43,7 @@ Details of how to configure the decorations are below.
 
 ### General
 
-![General Configuration Options](https://raw.githubusercontent.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas/master/Assets/general-configuration.PNG)
+![General Configuration Options](https://raw.githubusercontent.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas/master/Assets/general-configuration.png)
 
 For users to see the decorations you have to configure how they get to see them. There are two ways of doing this, they can be shown to all users, or displayed to users with a specific cookie set.
 
@@ -79,7 +79,7 @@ For example if you set the enabled value to be `Snow on` and the disabled value 
 
 ### Snow
 
-![Snow Configuration Options](https://raw.githubusercontent.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas/master/Assets/snow-configuration.PNG)
+![Snow Configuration Options](https://raw.githubusercontent.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas/master/Assets/snow-configuration.png)
 
 Here you can disable the snow effect if you would like, and disable it for mobile users if required.
 
@@ -87,7 +87,7 @@ You can also set the color of the snow flakes, this can be useful to make it sho
 
 ### Snowman
 
-![Snow Configuration Options](https://raw.githubusercontent.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas/master/Assets/snowman-configuration.PNG)
+![Snow Configuration Options](https://raw.githubusercontent.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas/master/Assets/snowman-configuration.png)
 
 Here you can disable the snow effect if you would like, and disable it for mobile users if required.
 
