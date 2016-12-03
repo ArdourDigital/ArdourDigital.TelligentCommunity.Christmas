@@ -76,8 +76,8 @@
         },
 
         register: function (options) {
+            var _this = this;
             if (options.textboxSelector && options.textboxEnabledValue && options.textboxDisabledValue) {
-                var _this = this;
                 $(options.textboxSelector).keyup(function () {
                     var value = $(options.textboxSelector).val().toLowerCase();
 
@@ -96,7 +96,9 @@
                 return;
             }
 
-            this.showDecorations(options);
+            setTimeout(function () {
+                _this.showDecorations(options);
+            }, 1000);
         }
     };
 
