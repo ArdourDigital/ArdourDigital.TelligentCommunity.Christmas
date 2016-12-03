@@ -7,11 +7,14 @@
     <id>ArdourDigital.TelligentCommunity.Christmas</id>
     <version>$version$</version>
     <authors>Ardour Digital Limited</authors>
-    <description>Christmas decorations for Telligent Community</description>
+    <description>Christmas decorations for Telligent Community 9.x</description>
     <language>en-US</language>
     <licenseUrl>https://github.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas/blob/master/LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas</projectUrl>
     <copyright>2016 - Ardour Digital Limited</copyright>
     <tags>Telligent, TelligentCommunity</tags>    
   </metadata>
+  <files>
+    <file src="bin\Release\ArdourDigital.TelligentCommunity.Christmas.dll" target="lib" />
+  </files>
 </package>
