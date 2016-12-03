@@ -5,11 +5,16 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Ardour Digital - Telligent Community - Twitter Cards Plugin")]
-[assembly: AssemblyDescription("Twitter Card support for Telligent Community")]
+[assembly: AssemblyTitle("Ardour Digital - Telligent Community - Christmas Decorations")]
+
+#if Telligent8
+[assembly: AssemblyDescription("Christmas decorations for Telligent Community 8.x")]
+#else
+[assembly: AssemblyDescription("Christmas decorations for Telligent Community")]
+#endif
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Ardour Digital Limited")]
-[assembly: AssemblyProduct("Ardour Digital - Telligent Community - Twitter Cards")]
+[assembly: AssemblyProduct("Ardour Digital - Telligent Community - Christmas Decorations")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
