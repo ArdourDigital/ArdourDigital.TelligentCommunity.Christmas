@@ -12,7 +12,8 @@
     <licenseUrl>https://github.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas/blob/master/LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas</projectUrl>
     <copyright>2016 - Ardour Digital Limited</copyright>
-    <tags>Telligent, TelligentCommunity</tags>    
+    <tags>Telligent, TelligentCommunity</tags>
+    <iconUrl>https://www.ardourdigital.co.uk/assets/ardour/icons/nuget.png</iconUrl>
   </metadata>
   <files>
     <file src="bin\Release\ArdourDigital.TelligentCommunity.Christmas.dll" target="lib" />
