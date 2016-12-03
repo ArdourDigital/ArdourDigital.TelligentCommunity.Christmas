@@ -17,7 +17,7 @@ This plugin should work with the following versions of Telligent Community
 
 ### Telligent 9.x
 
-You can install the plugin by [downloading the latest version of ArdourDigital.TelligentCommunity.Christmas.dll](https://github.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas/releases/latest) and adding it to your sites `bin` folder, or if you are using Visual Studio you can use nuget:
+You can install the plugin by [downloading the latest version of ArdourDigital.TelligentCommunity.Christmas.zip](https://github.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas/releases/latest) and adding the contents to your sites `bin` folder, or if you are using Visual Studio you can use nuget:
 
 ```
 Install-Package ArdourDigital.TelligentCommunity.Christmas
@@ -29,7 +29,7 @@ Details of how to configure the decorations are below.
 
 ### Telligent 8.x
 
-You can install the plugin by [downloading the latest version of ArdourDigital.TelligentCommunity.Christmas.Telligent8.dll](https://github.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas/releases/latest) and adding it to your sites `bin` folder, or if you are using Visual Studio you can use nuget:
+You can install the plugin by [downloading the latest version of ArdourDigital.TelligentCommunity.Christmas.Telligent8.zip](https://github.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas/releases/latest) and adding the contents to your sites `bin` folder, or if you are using Visual Studio you can use nuget:
 
 ```
 Install-Package ArdourDigital.TelligentCommunity.Christmas.Telligent8
