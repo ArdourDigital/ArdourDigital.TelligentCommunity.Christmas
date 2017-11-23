@@ -10,12 +10,13 @@ The plugin allows you to add a snow effect and/or a snowman footer to your commu
 
 ## Supported Versions
 This plugin should work with the following versions of Telligent Community
+- Telligent Community 10.x
 - Telligent Community 9.x
 - Telligent Community 8.x
 
 ## Installation
 
-### Telligent 9.x
+### Telligent 10.x and 9.x
 
 You can install the plugin by [downloading the latest version of ArdourDigital.TelligentCommunity.Christmas.zip](https://github.com/ArdourDigital/ArdourDigital.TelligentCommunity.Christmas/releases/latest) and adding the contents to your sites `bin` folder, or if you are using Visual Studio you can use nuget:
 
