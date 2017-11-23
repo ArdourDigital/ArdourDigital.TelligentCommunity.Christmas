@@ -30,12 +30,12 @@ namespace ArdourDigital.TelligentCommunity.Christmas
             {
                 var generalProperties = new PropertyGroup("general", "General", 0);
 
-                var startDate = new Property("start_date", "Start Date", PropertyType.Date, 0, DefaultStartDate.ToString());
-                startDate.DescriptionText = "The date the plugin will become active, no decorations will be shown before this date";
+                var startDate = new Property("start_date", "Start Date", PropertyType.String, 0, DefaultStartDate.ToString("yyyy/MM/dd"));
+                startDate.DescriptionText = "The date the plugin will become active, no decorations will be shown before this date. Must be in format yyyy/MM/dd.";
                 generalProperties.Properties.Add(startDate);
 
-                var endDate = new Property("end_date", "End Date", PropertyType.Date, 1, DefaultEndDate.ToString());
-                endDate.DescriptionText = "The date the plugin will become inactive, decorations will be hidden after this date";
+                var endDate = new Property("end_date", "End Date", PropertyType.String, 1, DefaultEndDate.ToString("yyyy/MM/dd"));
+                endDate.DescriptionText = "The date the plugin will become inactive, decorations will be hidden after this date. Must be in format yyyy/MM/dd.";
                 generalProperties.Properties.Add(endDate);
 
                 var enabled = new Property("enabled", "Enabled for all users", PropertyType.Bool, 2, false.ToString());
@@ -120,8 +120,8 @@ namespace ArdourDigital.TelligentCommunity.Christmas
             var startDate = configuration.GetDateTime("start_date");
             var endDate = configuration.GetDateTime("end_date");
 
-            ChristmasConfiguration.StartDate = startDate == default(DateTime) ? DefaultStartDate : startDate;
-            ChristmasConfiguration.EndDate = endDate == default(DateTime) ? DefaultEndDate : endDate;
+            ChristmasConfiguration.StartDate = startDate;
+            ChristmasConfiguration.EndDate = endDate;
             ChristmasConfiguration.EnabledForAll = configuration.GetBool("enabled");
             ChristmasConfiguration.SnowEnabled = configuration.GetBool("snow_enabled");
             ChristmasConfiguration.SnowEnabledForMobile = configuration.GetBool("snow_enabled_mobile");
